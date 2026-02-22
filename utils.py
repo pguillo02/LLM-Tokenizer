@@ -13,4 +13,32 @@ def most_common_pair(tokens: list[int]) -> tuple:
 
     return max(count, key=count.get)
 
+def swapping_most_common_pair(tokens: list[int], mcp:tuple) -> list[int]:
+    
+    merged_tokens: list[int] = []
+    try: 
+        new_token: int = max(tokens) + 1
+    except:
+        new_token = 0 
+
+    i: int = 0
+ 
+
+    while i < (len(tokens) - 1):
+        
+        if (tokens[i], tokens[i+1]) == mcp:
+            merged_tokens.append(new_token)
+            i += 2
+        else:
+            merged_tokens.append(tokens[i])
+
+            i += 1
+
+    if i == len(tokens ) - 1:
+        merged_tokens.append(tokens[i])
+
+    print(merged_tokens)
+        
+    
+    return merged_tokens
              
