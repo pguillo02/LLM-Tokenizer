@@ -21,8 +21,8 @@ class test_utils(unittest.TestCase):
         self.assertEqual(utils.training_tokenizer([1,2,3,4,1,2], 2), [((1,2), 5), ((5,3), 6)])
         self.assertEqual(utils.training_tokenizer([1,2,1,1,1,1,1,1,1], 3), [((1,1),3),((3,3),4),((1,2),5)])
         self.assertEqual(utils.training_tokenizer([1,2,3,4,5], 2), [((1,2),6), ((6,3),7)])
-        self.assertEqual(utils.training_tokenizer([1], 1), [])
-        self.assertEqual(utils.training_tokenizer([], 1), [])
+        self.assertEqual(utils.training_tokenizer([1], 1), 0)
+        self.assertEqual(utils.training_tokenizer([], 1), 0)
         pass
 
 if __name__ == "__main__":
