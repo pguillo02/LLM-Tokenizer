@@ -13,13 +13,9 @@ def most_common_pair(tokens: list[int]) -> dict:
 
     return count
 
-def swapping_most_common_pair(tokens: list[int], mcp:tuple) -> list[int]:
+def swapping_most_common_pair(tokens: list[int], mcp:tuple, new_token: int) -> list[int]:
     
     merged_tokens: list[int] = []
-    try: 
-        new_token: int = max(tokens) + 1
-    except:
-        new_token = 0 
 
     i: int = 0
  
@@ -37,3 +33,27 @@ def swapping_most_common_pair(tokens: list[int], mcp:tuple) -> list[int]:
         merged_tokens.append(tokens[i])       
     
     return merged_tokens
+
+def training_tokenizer(seq: list[int], iters: int) -> list[int]:
+    
+    i: int = 0
+
+    while i < iters: 
+        
+        count: dict = most_common_pair(seq)
+        mcp: tuple = max(count, key=count.get)
+
+        seq: list[int] = swapping_most_common_pair(seq, mcp) 
+
+        i += 1
+
+    return seq
+
+if __name__ == "__main__":
+    
+    dic = {(1,2):2, (2,3):1, (3,4):1, (4,1):1}
+    #print("hola")
+    #print(max(dic, key=dic.get))
+
+    print(training_tokenizer([1,2,3,4,1,2], 2))
+    
