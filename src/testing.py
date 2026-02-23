@@ -18,10 +18,11 @@ class test_utils(unittest.TestCase):
         self.assertEqual(utils.swapping_most_common_pair([], (), 1), [])
 
     def test_training(self):
-        #self.assertEqual(utils.training_tokenizer([1,2,3,4,1,2], 2), [6,4,5])
-        #self.assertEqual(utils.training_tokenizer())
-        #self.assertEqual(utils.training_tokenizer())
-        #self.assertEqual(utils.training_tokenizer())
+        self.assertEqual(utils.training_tokenizer([1,2,3,4,1,2], 2), [((1,2), 5), ((5,3), 6)])
+        self.assertEqual(utils.training_tokenizer([1,2,1,1,1,1,1,1,1], 3), [((1,1),3),((3,3),4),((1,2),5)])
+        self.assertEqual(utils.training_tokenizer([1,2,3,4,5], 2), [((1,2),6), ((6,3),7)])
+        self.assertEqual(utils.training_tokenizer([1], 1), [])
+        self.assertEqual(utils.training_tokenizer([], 1), [])
         pass
 
 if __name__ == "__main__":
