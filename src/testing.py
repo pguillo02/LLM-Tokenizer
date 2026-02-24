@@ -23,7 +23,6 @@ class test_utils(unittest.TestCase):
         self.assertEqual(utils.training_tokenizer([1,2,3,4,5], 2), [])
         self.assertEqual(utils.training_tokenizer([1], 1), 0)
         self.assertEqual(utils.training_tokenizer([], 1), 0)
-        pass
 
 if __name__ == "__main__":
 
