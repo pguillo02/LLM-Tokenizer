@@ -1,4 +1,13 @@
 def most_common_pair(tokens: list[int]) -> dict:
+    """
+    Function that recieves a list of tokens and returns a dictionary that contains the pairs present in the list a their frequency.
+
+    In:
+        tokens: list[int] = list of tokens
+
+    Returns:
+        count: dict() = Dictionary in which keys are the present pairs as tuples and values are the frequency count[(pair[0], pair[1])] = frequency.
+    """
 
     if len(tokens) <=1:
         return ()
