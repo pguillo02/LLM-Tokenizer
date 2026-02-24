@@ -56,6 +56,17 @@ def swapping_most_common_pair(tokens: list[int], mcp:tuple, new_token: int) -> l
     return merged_tokens
 
 def training_tokenizer(seq: list[int], iters: int, min_freq = 2) -> list[tuple]:
+    """
+    Loop for training the tokenizer. The function recieves a sequence and a number of iterations and learns a new reduction of the sequence every iteration. 
+
+    In: 
+        seq: list[int] = sequence used in the training
+        iters: int = number of iterations of the training loop
+        min_freq = 2: minimum frequency for a pair merged to be useful. 
+
+    Return:
+        merges: list[tuple(tuple(pair), new_token)] = reductions learned in the training process
+    """
 
     if len(seq) < 2:
         print("Text length must be of at least two units")
