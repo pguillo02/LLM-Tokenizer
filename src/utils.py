@@ -83,7 +83,7 @@ def training_tokenizer(seq: list[int], iters: int, min_freq = 2) -> list[tuple]:
         mcp: tuple = max(count, key=count.get)
 
         if count[mcp] < min_freq:
-            return merges
+            break
 
         seq = swapping_most_common_pair(seq, mcp, new_token)
 
