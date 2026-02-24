@@ -23,6 +23,18 @@ def most_common_pair(tokens: list[int]) -> dict:
     return count
 
 def swapping_most_common_pair(tokens: list[int], mcp:tuple, new_token: int) -> list[int]:
+    """
+    Function that recieves a list of tokens, the most commun pair and the new_token that replaces it. The idea is for the function to replace every complete pair with 
+    the new token, in order of reducing the length of the sequence.
+
+    In:
+        tokens: list[int] = the list of tokens
+        mcp: tuple = the most commun pair as a tuple (pair[0], pair[1])
+        new_token: int = the new token thats going to replace the mcp
+
+    Returns: 
+        merged_tokens: list[int] = new sequence with the new token
+    """
     
     merged_tokens: list[int] = []
 
