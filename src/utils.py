@@ -75,7 +75,7 @@ def training_tokenizer(seq: list[int], iters: int, min_freq = 2) -> list[tuple]:
     i: int = 0
     merges: list[tuple] = []
 
-    new_token: int = max(seq)
+    new_token: int = 255
     
     while i < iters: 
         new_token += 1 
