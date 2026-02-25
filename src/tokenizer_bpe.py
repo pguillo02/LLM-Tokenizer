@@ -4,11 +4,19 @@ class BPE_tokenizeer:
     
     def __init__(self, merges):
         self.merges = merges
+        self.__itos = self.__build_itos()
+        self.__stoi = self.__build_stoi()
 
     @classmethod
     def train(cls, training_text, training_iterations):
         tokens = list(training_text.encode("utf-8"))
         return cls(utils.training_tokenizer(tokens, training_iterations))
+    
+    def __build_itos(self):
+        pass
+
+    def __build_stoi(self):
+        pass
 
     def encoder(self):
         pass
